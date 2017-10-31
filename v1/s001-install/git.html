@@ -32,8 +32,8 @@
                 <section class="col-lg-12">
                     <h1>Git</h1>
                     <div>
-                        Další program, který budeme později potřebovat,
-                        nám později umožní (mimojiné) spolupracovat
+                        Další program, který budeme jednou potřebovat,
+                        nám později umožní (mimo jiné) spolupracovat
                         na vznikajících programech s ostatními.
                         Jmenuje se Git.
                         Pojďme si ho nainstalovat a nastavit.
@@ -44,15 +44,15 @@
                     Instalaci na Linux zvládneme jedním příkazem:
                 </section>
                 <section class="col-lg-6">
+                    <h4>Fedora:</h4>
                     <div>
-                        Fedora, RHEL:
-                        <pre>$ sudo yum install git gitk git-gui</pre>
+                        <pre>$ sudo dnf install git gitk git-gui</pre>
                     </div>
                 </section>
                 <section class="col-lg-6">
+                    <h4>Ubuntu, Debian:</h4>
                     <div>
-                        Ubuntu, Debian:
-                        <pre>$ sudo apt-get install git gitk git-gui</pre>
+                        <pre>$ sudo apt-get install git gitk git-gui nano</pre>
                     </div>
                 </section>
                 <section class="col-lg-12">
@@ -68,7 +68,13 @@
                     </div>
                 </section>
                 <section class="col-lg-12">
-                    Jestli máš nainstalováno, pokračuj Nastavením níže.
+                    Jestli máš nainstalováno, ještě nastavíme editor.
+                    Pokud nemáš ráda Vim (nebo nevíš co to je),
+                    zadej tento příkaz:
+<pre>
+git config --global core.editor nano
+</pre>
+                    Dál pokračuj obecným nastavením níže.
                 </section>
                 <section class="col-lg-12">
                     <h2>Windows</h2>
@@ -86,8 +92,8 @@
                     <div>
                         Potom ještě v příkazovém řádku zadej:
 <pre>
-$ git config --global core.editor notepad
-$ git config --global format.commitMessageColumns 80
+> git config --global core.editor notepad
+> git config --global format.commitMessageColumns 80
 </pre>
                     </div>
                     <div>
@@ -96,27 +102,34 @@ $ git config --global format.commitMessageColumns 80
                     </div>
                 </section>
                 <section class="col-lg-12">
-                    <h2>Mac OS X</h2>
+                    <h2>macOS</h2>
                     Spusť v příkazové řádce <code>git</code>.
-                    Je-li už nainstalovaný, dozvíš se jak ho používat
+                    Je-li už nainstalovaný, dozvíš se, jak ho používat
                     (výpis začíná <code>usage</code>).
-                    Jinak by se měly objevit instalační instrukce.
+                    Jinak ho nainstaluj pomocí <code>brew install git</code>.
+
+                    Gitu je ještě potřeba nastavit editor.
+                    Dělá se to tímto příkazem:
+<pre>
+git config --global core.editor nano
+</pre>
+                    Dál pokračuj obecným nastavením níže.
                 </section>
                 <section class="col-lg-12">
                     <h2>Nastavení</h2>
                     <div>
                         Na projektu, který bude uložen v Gitu, může
                         spolupracovat více lidí.
-                        Aby šlo dohledat kdo kterou změnu udělal, je Gitu
+                        Aby šlo dohledat, kdo kterou změnu udělal, je Gitu
                         potřeba říct jméno a e-mail:
 <pre>
 $ git config --global user.name "Adéla Novotná"
 $ git config --global user.email adela.novotna@example.cz
 </pre>
                         Můžeš samozřejmě použít i přezdívku, nebo dokonce
-                        falešný mail, ale v takovém případě bude složitější se
+                        falešný e-mail, ale v takovém případě bude složitější se
                         zapojit do týmových projektů.
-                        Každopádně, jméno i mail jdou kdykoli změnit
+                        Každopádně jméno i e-mail jdou kdykoli změnit
                         tím, že konfigurační příkazy zadáš znovu.
                     </div>
                     <div class="note">
@@ -125,7 +138,7 @@ $ git config --global user.email adela.novotna@example.cz
                         Adresa se zobrazí jen lidem, kteří si stáhnou projekt,
                         do kterého jsi přispívala.
                         Spammeři se většinou zaměřují na méně technicky zdatné
-                        lidi, než uživatele Gitu :)
+                        lidi, než jsou uživatelé Gitu :)
                     </div>
                     <div>
                         Dále si můžeš nastavit barvičky – pokud si tedy

@@ -1,3 +1,5 @@
+% arara: lualatex
+% arara: lualatex
 % Typeset using lualatex
 
 \documentclass[a4paper,10pt]{article}
@@ -42,7 +44,9 @@
 \newcommand\plpage{
     \newpage
     \begin{tikzpicture}[remember picture,overlay]
-    \node[opacity=0.1,below left,xshift=1cm,yshift=1cm] at (current page.north east) {\includegraphics[width=12cm]{../../images/pylady-pink}};
+        \node[opacity=0.1,below left,xshift=1cm,yshift=1cm] at (current page.north east) {\includegraphics[width=12cm]{../../images/pylady-pink}};
+        \node[below left,align=right,yshift=-1.5em] at (current page.north east) {\color{white} strana \thepage};
+        \node[below left,align=right] at (current page.north east) {\color{white} sada \plsetno};
     \end{tikzpicture}
 }
 
@@ -64,22 +68,24 @@
 \newfontfamily\headingfont[]{Bree Serif}
 \titleformat*{\section}{\LARGE\headingfont}
 
+\newcommand\plsetno{2}
+
 \begin{document}
 
 \plpage
 
-\section*{Domácí úkoly 2}
+\section*{Domácí projekty \plsetno}
 
 \begin{enumerate}
 \item Jakou používáš verzi Pythonu?
 
 \end{enumerate}
 
-\startsection{Následující úkoly procvičí orientaci v chybových hláškách. Doporučuji je udělat.}
+\startsection{Následující projekty procvičí orientaci v chybových hláškách. Doporučuji je udělat.}
 
 \begin{enumerate}[resume]
 
-\item Jak se jmenuje druh chyby, která nastane, když...
+\item Jak se jmenuje druh chyby, která nastane, když…
     \begin{itemize}
         \item Dáš uvozovky jen na jednu stranu řetězce? — \texttt{SyntaxError}
         \item Zkusíš odečíst číslo od řetězce? —
@@ -87,7 +93,7 @@
         \item Použiješ proměnnou, která neexistuje? —
         \item Stiskneš Ctrl+C, když se program ptá na vstup (pomocí \texttt{input})? —
         \item Odsadíš příkaz bez předchozího \texttt{if:}? —
-        \item Po \texttt{if:} odsadíš jeden příkaz o čtyři mezery, a druhý jen o dvě? —
+        \item Po \texttt{if:} odsadíš jeden příkaz o čtyři mezery a druhý jen o dvě? —
         \item Neuzavřeš závorku? –
         \item Zkusíš použít vykřičník (\texttt{!}) jako operátor? —
         \item Napíšeš v příkazu \texttt{print(1, 2, 3)} čárku navíc? —
@@ -100,13 +106,12 @@
     \\Jaká chyba nastane, když zkusíš podělit řetězec řetězcem?
 
 \item Lomítko (\texttt{/}) je operátor, ale nedá se použít na řetězce. Vykřičník (\texttt{!}) v Pythonu není operátor.
-    \\Jak se liší „jejich“ chyby? \emph{\small Rozdíly jsou aspoň dva.}
-
-\item Je zavináč (\texttt{@}) v Pythonu operátor?  % odpověď na tohle se v Pythonu 3.5 změní. To bude sranda!
+    \\Jak se liší „jejich“ chyby?
+    % Rozdíly jsou aspoň dva.
 
 \end{enumerate}
 
-\startsection{Tenhle úkol by měl přivést k tomu, jak zjišťovat co v Pythonu jde a co ne.
+\startsection{Tenhle projekt by měl přivést k tomu, jak zjišťovat, co v Pythonu jde a co ne.
 Druhá část je trochu na zamyšlení.}
 
 \begin{enumerate}[resume]
@@ -123,7 +128,7 @@ Druhá část je trochu na zamyšlení.}
         \varname{krůta}
         \varname{\$i}
         \varname{druha-odmocnina}
-        \varname{next.file}
+        \varname{readme.txt}
         \varname{kratsiStrana}
         \varname{POCET\_BODU}
         \varname[(podtržítko)]{\_}
@@ -137,48 +142,52 @@ Druhá část je trochu na zamyšlení.}
 
 \end{enumerate}
 
-\startsection{Následující úkoly jsou na procvičení toho, co jsme dělaly na srazu.
+\startsection{Následující projekty jsou na procvičení toho, co jsme dělaly na srazu.
 Nemáš-li čas, zatím je přeskoč.}
 
 \begin{enumerate}[resume]
 
 \item \emph{\small Zkus se nedívat na programy ze srazu.}
-    \\Napiš program, který spočítá povrch a obsah krychle o straně \SI{2852}{cm}.
-    \\Abys nemusela tolik hledat v učebnici (vlastně Wikipedii): povrch $S=6a^2$, obsah $V=a^3$
-    \\\emph{\small Řešení, pro kontrolu: $S=\SI{48803424}{cm^2}$, $V=\SI{23197894208}{cm^3}$}
+    \\Napiš program, který spočítá povrch a objem krychle o straně \SI{2852}{cm}.
+    \\Abys nemusela tolik hledat v učebnici (vlastně Wikipedii): povrch $S = 6a^2$, objem $V = a^3$
+    \\\emph{\small Řešení, pro kontrolu: $S = \SI{48803424}{ cm^2}$, $V = \SI{23197894208}{ cm^3}$}
 
 \item Změň program tak, aby stranu/poloměr mohl uživatel zadat.
-    \\\emph{\small Tady už se na materiály ke srazu klidně podívej.}
+    \\\emph{\small Tady už se na materiály ze srazu klidně podívej.}
 
 \end{enumerate}
 
-\startsection{Další dva úkoly doplňují program ze srazu, a jsou úplně nepovinné.}
+\startsection{Další dva projekty doplňují program ze srazu. Všechno bude vysvětleno později, takže jestli nemáš čas, přeskoč je.}
 
 \begin{enumerate}[resume]
 
-\item Zkus pustit tento program několikrát za sebou. Co dělá?
-    \\\verb+from random import randrange+
-    \\\verb+cislo = randrange(3)+
-    \\\verb+print(cislo)+
+\item Ulož si následující program jako \texttt{pokus.py} a spusť ho několikrát za sebou. Co dělá?
+    \\\verb+    from random import randrange+
+    \\\verb+    cislo = randrange(3)+
+    \\\verb+    print(cislo)+
     \\\emph{\small Jak to funguje, to se dozvíme příště; zatím to ber jako kouzelné zaříkadlo.}
+    \\\emph{\small
+        Aby všechno fungovalo správně, \emph{nesmíš} mít v aktuálním
+        adresáři soubor jménem \texttt{random.py}.
+    }
 
-\item Zkombinuj program z předchozího úkolu s programem kámen–nůžky–papír, a nastav \verb+tah_pocitace+ na:
+\item Zkombinuj program z předchozího projektu s programem kámen-nůžky-papír a nastav \verb+tah_pocitace+ na:
     \begin{enumerate}
-        \item \verb+'kámen'+, \emph{pokud} je \verb+cislo+ 0
-        \item \verb+'nůžky'+, pokud je \verb+cislo+ 1
-        \item jinak na \verb+'papír'+
+        \item \verb+'kámen'+, pokud je \verb+cislo+ 0,
+        \item \verb+'nůžky'+, pokud je \verb+cislo+ 1,
+        \item jinak na \verb+'papír'+.
     \end{enumerate}
 
 \end{enumerate}
 
 \plpage
 
-\startsection{Tyhle úkoly kombinují opakování a nové informace.
+\startsection{Tyhle projekty kombinují opakování a nové informace.
 Doporučuji si je projít.}
 
 \begin{enumerate}[resume]
 
-\item Které Pythoní \emph{operátory} dokážeš z hlavy vyjmenovat?
+\item Které pythonní \emph{operátory} dokážeš z hlavy vyjmenovat?
 
 \item Zkusila jsi porovnávat řetězce?
     \\Doplň tuhle tabulku tužkou; pak ověř odpovědi pomocí Pythonu:
@@ -189,8 +198,8 @@ Doporučuji si je projít.}
         \arrayrulecolor{silver}
         \verb+a+ &  & \verb+b+ \\
         \arrayrulecolor{black}\hline\arrayrulecolor{silver}
-        \verb+2+ & < & \verb+1+ \rowend
-        \verb+1+ & > & \verb+2+ \rowend
+        \verb+2+ & > & \verb+1+ \rowend
+        \verb+1+ & < & \verb+2+ \rowend
         \verb+'abc'+ & == & \verb+'abc'+ \rowend
         \verb+'aaa'+ &    & \verb+'abc'+ \rowend
         \verb+'abc'+ &    & \verb+'Abc'+ \rowend
@@ -208,11 +217,12 @@ Doporučuji si je projít.}
     \\\verb+promenna = 1 < 3 < 2+ \hspace{0.2cm}?
     \\\verb+promenna = 1 < 3 < 3+ \hspace{0.2cm}?
     \\\verb+promenna = 'abc' < 'ABC' < 'def' < 'zajíc'+ \hspace{0.2cm}?
-    \\Tam kde je hodnota proměnné \False, dají se některé z porovnávaných hodnot vyměnit, aby byla \True?
+    \\Tam, kde je hodnota proměnné \False, dají se některé z porovnávaných
+    hodnot mezi sebou vyměnit, aby byla \True?
 
 \end{enumerate}
 
-\startsection{Další dva úkoly ti umožní kreativně využít co ses naučila.}
+\startsection{Další dva projekty ti umožní kreativně využít, co ses naučila.}
 
 \begin{enumerate}[resume]
 
@@ -220,20 +230,25 @@ Doporučuji si je projít.}
     \\Zkus napsat program, který píše hlášky podle zadané
     rychlosti chůze, váhy ulovené ryby, počtu tykadel, teploty vody
     nebo třeba vzdálenosti od rovníku.
-    \\Program pošli na soukromý e-mail organizátora (ne do diskusní skupiny).
-    Pošli ho jako přílohu, nekopíruj ho do textu e-mailu.
+
+    Podle toho, jak jste se na sraze domluvili, pošli řešení e-mailem
+    (např. organizátorům, koučovi, nebo vůbec).
+    Posílej ho jako přílohu, nekopíruj ho do textu e-mailu.
+    \\Jestli procházíš kurz sama a můžeš programování konzultovat s někým
+    zkušenějším, je tento úkol na takovou konzultaci ideální téma.
 
 \item Napiš program, který po zadání správného hesla vypíše nějakou tajnou informaci.
     \\\emph{\small Vhodné tajemství je třeba: V pátek jsem viděla černého havrana.}
 
 \end{enumerate}
 
-\startsection{Poslední úkoly jsou pokročilejší.
+\startsection{Poslední projekty jsou pokročilejší.
 Jestli nemáš čas, radši udělej pořádně ty ostatní.}
 
 \begin{enumerate}[resume]
 
-\item Projdi si \url{http://python.cz/pyladies/s002-hello-world/and-or.html}
+\item Projdi si v materiálech bonusovou sekci „\emph{Nebo} anebo \emph{a}”:
+    \\\url{http://naucse.python.cz/lessons/beginners/and-or/}
 
 \item Doplň tuhle tabulku:
 
@@ -250,10 +265,10 @@ Jestli nemáš čas, radši udělej pořádně ty ostatní.}
         \end{tabular}
     }
 
-    \emph{\small Tohle je takzvaná \emph{pravdivostní tabulka}.
+    \emph{\small Tohle je takzvaná \emph{pravdivostní tabulka}:
           Obsahuje jeden řádek pro každou kombinaci booleovských hodnot, které \texttt{a} a \texttt{b}
-          můžou mít. Když se stane, že se v \texttt{and} a \texttt{or} ztratíš,
-          doporučuji napsat si podobnou tabulku, a na každý řádek se podívat zvlášť.}
+          můžou mít. Když se stane, že se v složitějších \texttt{and} a \texttt{or} ztratíš,
+          doporučuji napsat si podobnou tabulku a na každý řádek se podívat zvlášť.}
 
 \item Zkus přepsat Kámen, Nůžky, Papír pomocí \texttt{and} a \texttt{or}.
     \\Dokážeš docílit toho, aby se každý z řetězců \texttt{'Plichta.'},

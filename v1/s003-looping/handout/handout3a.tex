@@ -75,22 +75,22 @@
 
 \begin{document}
 
-\section*{Domácí úkoly \plsetno}
+\section*{Domácí projekty \plsetno}
 
-\startsection{V těchto úkolech je určitě něco nového. Nezadávají postup, jak na odpověď přijít, ale to určitě zvládneš!}
+\startsection{V těchto projektech je určitě něco nového. Nezadávají postup, jak na odpověď přijít, ale to určitě zvládneš!}
 
 \begin{enumerate}[resume]
 \item Co vrací funkce \verb+range+?
 
 \item Co se stane, když pro příkaz \verb+for+
-    zavoláš funkci \verb+range+ se dvěma parametry?
+    zavoláš funkci \verb+range+ se dvěma argumenty?
 
 \item Se třemi?
 
 \end{enumerate}
 
 \startsection{Želví kreslení! Tahle sekce tě naučí myslet jako programátorka počítačové grafiky.
-Je dobré jednotlivé úkoly dělat postupně, a když něco začne fungovat, znovu si řešení projít a zamyslet se nad ním.}
+Je dobré jednotlivé projekty dělat postupně, a když něco začne fungovat, znovu si řešení projít a zamyslet se nad ním.}
 
 \begin{enumerate}[resume]
 
@@ -186,14 +186,14 @@ with ctx():
 \turtle{fd=28.571428571428573,lt=51.428571428571416,fd=28.571428571428573,lt=51.428571428571416,fd=28.571428571428573,lt=51.428571428571416,fd=28.571428571428573,lt=51.428571428571416,fd=28.571428571428573,lt=51.428571428571416,fd=28.571428571428573,lt=51.428571428571416,fd=28.571428571428573,lt=51.428571428571416,}
 \turtle{fd=25.0,lt=45.0,fd=25.0,lt=45.0,fd=25.0,lt=45.0,fd=25.0,lt=45.0,fd=25.0,lt=45.0,fd=25.0,lt=45.0,fd=25.0,lt=45.0,fd=25.0,lt=45.0,}
 
-    \emph{\small Vnitřní úhel pravidelného $n$-úhelníka má $180 \cdot (1-\frac2n)$ stupňů. (Ty ale budeš chtít vnější úhel – viz úkol \ref{trojuhelnik}.)}
+    \emph{\small Vnitřní úhel pravidelného $n$-úhelníka má $180 \cdot (1-\frac2n)$ stupňů. (Ty ale budeš chtít vnější úhel – viz projekt \ref{trojuhelnik}.)}
 
     \emph{\small Aby byly tvary zhruba stejně veliké, použij pro $n$-úhelník délku strany např. $\frac{200}n$.}
 
 \item Nakresli $n$-úhelník, kde $n$ zadá uživatel.
 
 \item Želva umí jen rovné čáry. Jde pomocí rovných čar nakreslit kolečko?
-    \\\emph{\small Nevíš-li, přeskoč na další úkol, a pak se sem vrať.}
+    \\\emph{\small Nevíš-li, přeskoč na další projekt a pak se sem vrať.}
 
 \item Nakresli pětadevadesátiúhelník.
 
@@ -239,21 +239,26 @@ with ctx():
 \item Napiš obrázek! Třeba les ze stromů, město z domů, nebe z hvězd,
         dav ze smajlíků, hradbu z věží, zikkurat ze schodů, ...
     \\Můžeš použít i nějakou z funkcí modulu \verb+random+.
-    \\Program pošli na soukromý e-mail organizátora (ne do diskusní skupiny).
-    Pošli ho jako přílohu, nekopíruj ho do textu e-mailu.
+
+
+    Podle toho, jak jste se na sraze domluvili, pošli řešení e-mailem
+    (např. organizátorům, koučovi, nebo vůbec).
+    Posílej ho jako přílohu, nekopíruj ho do textu e-mailu.
+    \\Jestli procházíš-li kurz sama a můžeš programování konzultovat s někým
+    zkušenějším, je tento úkol na takovou konzultaci ideální téma.
 
 \end{enumerate}
 
-\startsection{Další úkoly jsou pro opravdové grafické mystryně. Nepouštěj se do nich, dokud nemáš hotové ostatní úkoly.
+\startsection{Další projekty jsou pro opravdové grafické mistryně. Nepouštěj se do nich, dokud nemáš hotové ostatní projekty.
 Nedostaneš-li se k nim, nevadí.}
 
 \begin{enumerate}[resume]
-\item Na sraze jsme nakreslily tři čtverce, každý otočený o 20°.
+\item Na sraze jsme nakreslili tři čtverce, každý otočený o 20°.
     \\Nakresli 18 takových čtverců.
 
-\item Vezmi program z minulé úlohy, a dokresli stonek a listy.
+\item Vezmi program z minulé úlohy a dokresli stonek a listy.
     Je jenom na tobě, jaký budou mít tvar.
-    \\Piš komentáře, a snaž se opakovat pomocí \verb+for+,
+    \\Piš komentáře a snaž se opakovat pomocí \verb+for+,
         ne pomocí Ctrl+C Ctrl+V.
 
 \end{enumerate}
@@ -261,11 +266,19 @@ Nedostaneš-li se k nim, nevadí.}
 \startsection{A až tě omrzí grafika, zkus zase naprogramovat něco v textovém režimu.}
 
 \begin{enumerate}[resume]
-\item Napiš program, který načte dvě čísla a jednoznakový řetězec
+\item Napiš program, který postupně načte od uživatele dvě čísla a jednoznakový řetězec
     – buď \verb!'+'!, \verb!'-'!, \verb!'*'! nebo \verb!'/'!.
     Program provede na číslech příslušnou operaci.
+    \\{\small \emph{Příklad použití programu:}~~
+        \parbox[t]{0.2\linewidth}{\texttt{\noindent
+            První číslo: \textit{123}
+            \\Druhé číslo: \textit{456}
+            \\Operace: \textit{+}
+            \\123 + 456 = 579
+        }}
+    }
 
-\item Napiš program, který se pětkrát zeptá na číslo, a nejmenší zadané číslo vypíše.
+\item Napiš program, který se pětkrát zeptá na číslo a nejmenší zadané číslo vypíše.
     \\\emph{\small Nevíš-li si rady, podívej se do materiálů na sekci Přepisování proměnných.
             Místo sečítání budeš vybírat správnou hodnotu.}
 
@@ -308,4 +321,3 @@ with ctx():
 \hfill~%
 
 \end{document}
-
